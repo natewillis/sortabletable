@@ -7,10 +7,8 @@ from .forms import TableRowForm
 def index(request):
     template = 'example/index.html'
     table_rows = TableRow.objects.all()
-    rows_and_forms = [[row, TableRowForm(instance=row)] for row in table_rows]
     context = {
-        'rows': table_rows[0:4],
-        'rows_and_forms': rows_and_forms
+        'rows': table_rows,
     }
     return render(request, template, context)
 
