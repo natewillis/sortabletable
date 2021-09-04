@@ -1,0 +1,16 @@
+
+    <td>{{ row.id }}</td>
+    <td>{{ row.first_name }}</td>
+    <td>{{ row.last_name }}</td>
+    <td>{{ row.home_state }}</td>
+    <td>{{ row.age }}</td>
+    <td>
+        <button
+            hx-get="{% url 'tablerow_get_update' row.id %}"
+            class="btn btn-primary"
+            hx-swap="innerHTML"
+            hx-target="closest tr"
+        >
+        Edit
+        </button>
+    </td>

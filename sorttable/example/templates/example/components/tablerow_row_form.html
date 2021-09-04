@@ -1,0 +1,9 @@
+        <td colspan="6">
+            <form hx-post="{% url 'tablerow_get_update' form.instance.pk %}" hx-target="closest tr" hx-swap="innerHTML">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+            </form>
+        </td>
+
+
